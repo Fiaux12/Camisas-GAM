@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>Exemplo GET</title>
+<body>
+
+<title> Cadastro de Usuário </title>
+
+	<form action="cadastro.php" method="GET">
+
+		<label>Nome:</label> <input type="text" name="nome" id="nome"><br>
+		<label>Email:</label> <input type="email" name="email" id="email"><br>
+		<label>Senha:</label> <input type="password" name="senha" id="senha"><br>
+		<select name="tipoUsuario" id="tipoUsuario">
+		<option value="cliente">Cliente</option>
+		<option value="adm">Adiministrador</option>
+		<option value="admTI">Adiministrador de TI</option>
+		</select><br>
+		
+		<input type="submit" id="cadastrar">
+
+	</form>
+
+</body>
+</html>
