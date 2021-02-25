@@ -73,6 +73,17 @@ input, select, textarea {
 }
 
 /* Basic */
+.centro-borda {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #5d5d5d;
+  padding: 10px;
+}
+.centro {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
 
 	html {
 		box-sizing: border-box;
@@ -134,12 +145,13 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #252122;
+		color: #ffffff;
 		font-weight: 700;
+		font-size: 28pt;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-		color: inherit;
+		color: #ffffff;
 		text-decoration: none;
 	}
 
