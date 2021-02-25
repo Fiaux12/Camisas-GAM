@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/partials/page-give-classes.css">
+  <link rel="stylesheet" href="/styles/partials/header.css">
+  <link rel="stylesheet" href="/styles/partials/forms.css">
+	</head>
+<body>
+
+<title> Cadastro de Usuário </title>
+<div id="container">
+    <header class="page-header">
+      <div class="top-bar-container">
+        <a href="/"><img src="/images/icons/back.svg" alt="back"></a>
+      </div>
+      <div class="header-content">
+        <strong>Bem vindo ao cadastro!</strong>
+        <p>Tenha certeza de que seus dados estão corretos</p>
+      </div>
+    </header>
+    <main>
+	<form action="cadastrar.php" method="POST">
+		<div class="input-block">
+		<label>Nome:</label> <input type="text" name="nome" id="nome"><br>
+	</div>
+	<div class="input-block">
+		<label>Email:</label> <input type="email" name="email" id="email"><br>
+	</div>
+	<div class="input-block">
+		<label>Senha:</label> <input type="password" name="senha" id="senha"><br>
+	</div>	
+		<input type="submit" id="cadastrar">
+
+	</form>
+</main>
+</body>
+</html>
