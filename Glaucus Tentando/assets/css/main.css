@@ -107,7 +107,7 @@ input, select, textarea {
 	}
 
 	strong, b {
-		color: #252122;
+		color: #ffffff;
 		font-weight: 400;
 	}
 
@@ -173,6 +173,7 @@ input, select, textarea {
 
 	p, ul, ol, dl, table {
 		margin-bottom: 2em;
+		color: #ffffff;
 	}
 
 /* Container */
