@@ -73,7 +73,26 @@ input, select, textarea {
 }
 
 /* Basic */
-
+.centro-borda {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #5d5d5d;
+  padding: 10px;
+}
+.centro {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+p#cad-log {
+		margin-bottom: 2em;
+		color: #ffffff;
+	}
+h1#cad-log{
+		color: #ffffff;
+		font-weight: 700;
+		font-size: 28pt;
+	}
 	html {
 		box-sizing: border-box;
 	}
@@ -1439,6 +1458,12 @@ input, select, textarea {
 		}
 
 /* Form */
+form label#cad-log {
+		display: block;
+		color: #ffffff;
+		font-weight: 400;
+		margin: 0 0 0.5em 0;
+	}
 
 	form label {
 		display: block;
