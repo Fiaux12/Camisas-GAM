@@ -10,7 +10,7 @@
         
 
         if($_POST['identificador'] == 'prod01'){
-            $idProduto = '1';
+            $idProduto = '20';
 
             if(confereExistencia($idProduto) == true){
 
@@ -21,7 +21,7 @@
             }
             
         }elseif($_POST['identificador'] == 'prod02'){
-            $idProduto = '2';
+            $idProduto = '21';
 
             if(confereExistencia($idProduto) == true){
 
@@ -32,7 +32,7 @@
             }
 
         }elseif($_POST['identificador'] == 'prod03'){
-            $idProduto = '3';
+            $idProduto = '22';
 
             if(confereExistencia($idProduto) == true){
 
@@ -43,7 +43,7 @@
             }
 
         }elseif($_POST['identificador'] == 'prod04'){
-            $idProduto = '4';
+            $idProduto = '23';
 
             if(confereExistencia($idProduto) == true){
 
@@ -54,7 +54,7 @@
             }
 
         }elseif($_POST['identificador'] == 'prod05'){
-            $idProduto = '5';
+            $idProduto = '24';
 
             if(confereExistencia($idProduto) == true){
 
@@ -65,7 +65,7 @@
             }
 
         }elseif($_POST['identificador'] == 'prod06'){
-            $idProduto = '6';
+            $idProduto = '25';
 
             if(confereExistencia($idProduto) == true){
 
