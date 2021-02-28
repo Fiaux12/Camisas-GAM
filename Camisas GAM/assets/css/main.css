@@ -72,6 +72,14 @@ input, select, textarea {
 	appearance: none;
 }
 
+/*Div dos botões login*/
+#logins{
+	padding: 5px 0 5px 0;
+	padding-right: 10px;
+	text-align: right;
+	font-size: 50%;
+}
+
 /* Basic */
 .two-col {
     overflow: hidden;/* Makes this div contain its floats */
