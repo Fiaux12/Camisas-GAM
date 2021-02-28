@@ -112,7 +112,7 @@
 												?>
 												<footer>
 													<ul class="actions">
-													<form action="../produto.php" method="POST">
+													<form action="../mostraProduto.php" method="POST">
 															<input type="hidden" name="identificador" value="22" />
 															<button>Comprar</button>
 													    </form>
@@ -144,7 +144,7 @@
 												?>
 												<footer>
 													<ul class="actions">
-													<form action="../produto.php" method="POST">
+													<form action="../mostraProduto.php" method="POST">
 															<input type="hidden" name="identificador" value="26" />
 															<button>Comprar</button>
 													    </form>
@@ -176,7 +176,7 @@
 												?>
 												<footer>
 													<ul class="actions">
-													<form action="../produto.php" method="POST">
+													<form action="../mostraProduto.php" method="POST">
 															<input type="hidden" name="identificador" value="36" />
 															<button>Comprar</button>
 													    </form>
