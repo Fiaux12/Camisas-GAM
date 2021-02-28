@@ -105,8 +105,13 @@ width: 40%;
 }
 .centro-borda {
   margin: auto;
-  width: 60%;
+  width: 30%;
   border: 3px solid #5d5d5d;
+  padding: 10px;
+}
+.cent {
+  margin: auto;
+  width: 30%;
   padding: 10px;
 }
 .centro {
@@ -114,7 +119,10 @@ width: 40%;
   width: 60%;
   padding: 10px;
 }
-
+p#car {
+		margin-bottom: 0em;
+		color: #ffffff;
+	}
 p#cad-log {
 		margin-bottom: 2em;
 		color: #ffffff;
