@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+    @session_start();
 
     $banco = 'GAM';
     $localhost = '127.0.0.1';
