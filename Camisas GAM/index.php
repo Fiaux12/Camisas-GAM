@@ -51,21 +51,21 @@
 						<nav id="nav">
 							<ul>
 								<li class="current"><a href="index.php">Home</a></li>
-								<li><a href="geek.php">Geek</a>
+								<li><a href="categorias/geek.php">Geek</a>
 									<ul>
-										<li><a href="animes.php">Animes</a></li>
-										<li><a href="filmeserie.php">Filmes e Séries</a></li>
-										<li><a href="games.php">Games</a></li>
-										<li><a href="internet.php">Internet</a></li>
+										<li><a href="categorias/animes.php">Animes</a></li>
+										<li><a href="categorias/filmeserie.php">Filmes e Séries</a></li>
+										<li><a href="categorias/games.php">Games</a></li>
+										<li><a href="categorias/internet.php">Internet</a></li>
 									</ul>
 								</li>
-								<li><a href="religiosa.php">Religiosa</a></li>
-								<li><a href="barba.php">Barba</a></li>
-								<li><a href="caveira.php">Caveira</a></li>
-								<li><a href="food.php">Food</a></li>
-								<li><a href="halloween.php">Halloween</a></li>
-								<li><a href="literatura.php">Literatura</a></li>
-								<li><a href="musica.php">Música</a></li>
+								<li><a href="categorias/religiosa.php">Religiosa</a></li>
+								<li><a href="categorias/barba.php">Barba</a></li>
+								<li><a href="categorias/caveira.php">Caveira</a></li>
+								<li><a href="categorias/food.php">Food</a></li>
+								<li><a href="categorias/halloween.php">Halloween</a></li>
+								<li><a href="categorias/literatura.php">Literatura</a></li>
+								<li><a href="categorias/musica.php">Música</a></li>
 							</ul>
 						</nav>
 
