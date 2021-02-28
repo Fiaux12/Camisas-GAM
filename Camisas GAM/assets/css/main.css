@@ -137,6 +137,15 @@ h3#cad-log{
 		font-weight: 700;
 		font-size: 14pt;
 	}
+textarea#pag{
+font-family: 'Source Sans Pro';
+		font-weight: 300;
+		color: #5d5d5d;
+		font-size: 14pt;
+		line-height: 1.75em;
+		width:50%;
+		height:50%;
+}
 	html {
 		box-sizing: border-box;
 	}
