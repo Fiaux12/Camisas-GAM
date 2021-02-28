@@ -17,17 +17,20 @@ class Produto{
             $dado = $sql->fetch();
             echo $dado['nome'];echo("</br>");
             echo $dado['preco'];echo("</br>");
-            echo $dado['quantidade'];echo("</br>");
             echo $dado['descricao'];echo("</br>");
-            echo $dado['genero'];echo("</br>");
-            echo $dado['tamanho'];echo("</br>");
             echo $dado['img'];echo("</br>");
-            echo $dado['cor'];echo("</br>");
 
-            $_REQUEST['dados'] = $dado['nome'];
+            
+            if(!isset($_SESSION['carrinho'])){
+                $_SESSION['carrinho'] = array();
+            }          
 
-           // $_SESSION['idUsuario'] = $dado['id'];
-           //criar um vetor pra de idProduto pra depois colocar na session  
+            $dadosPedido = array();
+            $dadosPedido[] = $dado['id'];
+            //add outros dados do pedido no array acima.
+            $_SESSION['carrinho'][] = $dadosPedido;
+
+            return $dado;
 
         }
 
