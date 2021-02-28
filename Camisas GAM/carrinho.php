@@ -1,29 +1,21 @@
-<?php
-    //Ainda n funciona
-    if (isset($_POST['adicionar']) && !empty($_POST['adicionar'])) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
         require 'conexao.php';
-        require 'Carrinho.class.php';
-        echo "deu bom";
-        
-        $c = new Carrinho();
-        
-        $idProduto = (int)$_POST['adicionar'];
 
-        if($c->adicionar($idProduto) == true){
-            if(isset($_SESSION['idUsuario'])){
-                echo "usuario logado e produto adicionado!";
-            }else{
-                echo "Faça login para adicionar produtos no carrinho!";
-            }
+        foreach($_SESSION['carrinho'] as $produto){
+            echo $produto[0];
         }
-         
 
-    }else{
-        header("Location: index.php");
-    }
+    
+    ?>
 
-
-
-
-
-?>
+</body>
+</html>
