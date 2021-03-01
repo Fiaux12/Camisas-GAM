@@ -1,7 +1,7 @@
 <?php
 
 class Carrinho{
-    public function adicionar($idProduto, $quantidade, $sexo, $cor, $CEP, $tamanho){
+    public function adicionar($idProduto, $quantidade, $sexo, $cor, $tamanho){
 
         global $pdo;
 
@@ -19,10 +19,13 @@ class Carrinho{
 
             $dadosPedido = array();
             $dadosPedido[] = $dado['id'];
+            $dadosPedido[] = $dado['descricao'];
+            $dadosPedido[] = $dado['preco'];
+            $dadosPedido[] = $dado['nome'];
+            $dadosPedido[] = $dado['img'];
             $dadosPedido[] = $quantidade;
             $dadosPedido[] = $sexo;
             $dadosPedido[] = $cor;
-            $dadosPedido[] = $CEP;
             $dadosPedido[] = $tamanho;
 
             $_SESSION['carrinho'][] = $dadosPedido;
@@ -30,6 +33,16 @@ class Carrinho{
     }
 
     public function remover(){    }
+
+    public function busca($id){
+
+        global $pdo;
+			$resultado = array();
+			$cmd = $pdo->query("SELECT id, img, nome, preco FROM Camisa WHERE id = '$id'");
+			$resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+			return $resultado;
+
+    }
 }
 
 ?>

@@ -49,13 +49,13 @@
         </h1>
       </div>
  <h2 style="color: white;" id="cad-log">Coloque as opções para seu pedido</h2>
-  <form action="carrinho.php" method="POST" class="centro">
+  <form action="addCarrinho.php" method="POST" class="centro">
 		<fieldset>
           <p>
              <label id="cad-log">Tamanho</label>
              <select id = "myList" name="tamanho">
                <option value = "PP">PP</option>
-               <option value = "P">PP</option>
+               <option value = "P">P</option>
                <option value = "M">M</option>
                <option value = "G">G</option>
                <option value = "GG">GG</option>
@@ -97,7 +97,6 @@
         <label id="cad-log">Quantidade</label> <input type="number" name="quantidade">
       </div>
       <div class="col2">
-        <label id="cad-log">CEP(apenas números)</label> <input type="number" name="CEP">
           <?php
             $dados = $p->buscaDadosLinha($_POST['identificador']);
             if(count($dados) > 0){
