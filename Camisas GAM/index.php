@@ -30,7 +30,7 @@
 		?>
 				<a href="#" style="font-size: 16px;"><?php echo $_SESSION['nomeUsuario']; ?></a>
 				<a href="sair.php" style="font-size: 16px;">Sair</a>
-				<a href="./carrinho.html"><img src="imgs/carrinho.png" width=30 height=20></a>
+				<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
 		<?php
 		}
 		?>
