@@ -9,7 +9,7 @@
     $cor = $_POST['cor'];
     $sexo = $_POST['sexo'];
     $tamanho = $_POST['tamanho'];
-    $CEP =  $_POST['CEP'];
+    
     
     $c->adicionar($id, $quantidade, $sexo, $cor, $tamanho);
     

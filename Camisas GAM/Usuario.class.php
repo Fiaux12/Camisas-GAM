@@ -37,10 +37,6 @@ class Usuario{
         $sql->execute();
 
         if($sql->rowCount() > 0){
-            $dado = $sql->fetch();
-            echo $dado['email'];
-
-            $_SESSION['idUsuario'] = $dado['id'];
 
             return false;
             

@@ -18,15 +18,15 @@ class Carrinho{
             }
 
             $dadosPedido = array();
-            $dadosPedido[] = $dado['id'];
-            $dadosPedido[] = $dado['descricao'];
-            $dadosPedido[] = $dado['preco'];
-            $dadosPedido[] = $dado['nome'];
-            $dadosPedido[] = $dado['img'];
-            $dadosPedido[] = $quantidade;
-            $dadosPedido[] = $sexo;
-            $dadosPedido[] = $cor;
-            $dadosPedido[] = $tamanho;
+            $dadosPedido[] = $dado['id'];        //0
+            $dadosPedido[] = $dado['descricao']; //1
+            $dadosPedido[] = $dado['preco'];     //2
+            $dadosPedido[] = $dado['nome'];      //3
+            $dadosPedido[] = $dado['img'];       //4
+            $dadosPedido[] = $quantidade;        //5
+            $dadosPedido[] = $sexo;              //6
+            $dadosPedido[] = $cor;               //7
+            $dadosPedido[] = $tamanho;           //8
 
             $_SESSION['carrinho'][] = $dadosPedido;
         }

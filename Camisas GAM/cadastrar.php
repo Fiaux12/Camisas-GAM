@@ -13,10 +13,7 @@
         $senha = $_POST['senha'];
 
         if($u->cadastro($nome, $email, $tipoUsuario, $senha) == true){
-            if(isset($_SESSION['idUsuario'])){
-                header("Location: index.php");
-                
-            }
+                header("Location: index.php"); 
         }else{
 
             header("Location: cadastrar.html");

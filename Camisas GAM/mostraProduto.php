@@ -31,8 +31,8 @@
     }
   ?>
 
- 
- <div class="centro">
+ <div style="color: white; text-align: center;">
+      <div class="centro">
         <h1 id="cad-log">
           <?php
             $dados = $p->buscaDadosLinha($_POST['identificador']);
@@ -48,7 +48,10 @@
           ?>
         </h1>
       </div>
- <h2 style="color: white;" id="cad-log">Coloque as opções para seu pedido</h2>
+ </div>
+
+ <h2 style="color: white;" id="cad-lo">Escolha as opções para seu pedido!</h2>
+ 
   <form action="addCarrinho.php" method="POST" class="centro">
 		<fieldset>
           <p>
@@ -94,7 +97,7 @@
     
     <div class="two-col">
       <div class="col1">
-        <label id="cad-log">Quantidade</label> <input type="number" name="quantidade">
+        <label id="cad-log">Quantidade</label> <input type="number" name="quantidade" value="1">
       </div>
       <div class="col2">
           <?php

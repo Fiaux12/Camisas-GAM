@@ -2,7 +2,7 @@
 	require 'conexao.php';
 	require_once 'Camisa.class.php';
 	$p = new Camisa();
-	session_start();
+
 ?>
 
 <!DOCTYPE HTML>
@@ -24,13 +24,13 @@
 		?>
 			<a href="./cadastrar.html"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
 			<a href="./logar.html"><button type="button" class="btn btn-primary">Login</button></a>
-			<a href="./carrinho.html"><img src="imgs/carrinho.png" width=30 height=20></a>
+			<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
 		<?php
 		}else{
 		?>
-				<a href="#" style="font-size: 16px;"><?php echo $_SESSION['nomeUsuario']; ?></a>
-				<a href="sair.php" style="font-size: 16px;">Sair</a>
-				<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
+			<a href="acompanharPedido.php"><button type="button" class="btn btn-primary">Pedidos</button></a>
+			<a href="sair.php"><button type="button" class="btn btn-primary">Sair</button></a>
+			<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
 		<?php
 		}
 		?>
@@ -40,9 +40,6 @@
 
 			<!-- Header -->
 				<section id="header">
-
-				
-					
 
 					<!-- Logo -->
 						<h1><a href="index.php">Camisas GAM</a></h1>
