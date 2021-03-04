@@ -40,7 +40,7 @@
                     echo '</div>';
                 echo '</fieldset>';
 
-                $total += $dadosPedido[2];
+                $total += $dadosPedido[2] * $dadosPedido[5];
             }
         ?>
         <div class="cent" style=" text-align: center;">
