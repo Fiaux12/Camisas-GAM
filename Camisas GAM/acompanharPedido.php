@@ -39,44 +39,68 @@
     <body>
         <h1 id="cad-log" class="cent" style="text-align: center;">Meus pedidos</h1>
         <h3 id="cad-log" class="cent" style="text-align: center;">Acompanhe seus pedidos aqui!</h3>
-        <table>
-            <tr>
-                <th>Nº Pedido</th>
-                <th>Pagamento</th>
-                <th>Entrega</th>
-                <th>Preço(R$)</th>
-                <th>Fazer Nota</th>
-                <th>Cancelar Pedido</th>
+        <p id="cad-log">* Se o pagamento não for efetuado dentro de 3 dias o pedido será cancelado.</p>
 
-            </tr>
-            
-                <?php
-                    
-                    $dados = $p->buscarPedido($_SESSION['idUsuario']);
-                    if(count($dados) > 0){
-                        for($i=0; $i < count($dados); $i++){
-                            echo "<tr>";
-                            foreach ($dados[$i] as $k => $v) {
-                                
-                                if($k == "id"){
-                                echo '<td>#'.$v.'</td>';                  
+        <form action="confirmaCliente.php" method="POST" >
+            <table>
+                <tr>
+                    <th>Nº Pedido</th>
+                    <th>Pagamento*</th>
+                    <th>Entrega</th>
+                    <th>Confirmar Entrega</th>
+                    <th>Preço(R$)</th>
+                    <th>Emitir Nota</th>
+
+                </tr>
+                
+                    <?php
+                        
+                        $dados = $p->buscarPedido($_SESSION['idUsuario']);
+                        if(count($dados) > 0){
+                            for($i=0; $i < count($dados); $i++){
+                                echo "<tr>";
+                                foreach ($dados[$i] as $k => $v) {
+                                    
+                                    if($k == "id"){
+                                        echo '<td>#'.$v.'</td>';  
+                                        $idPedido = $v;                
+                                    }
+                                    if($k == "preco"){
+                                        echo '<td>'.$v.'</td>';                  
+                                    }
+                                    
+                                    if($k == "status_pagamento"){
+                                        if($v == 'X'){
+                                            echo '<td>Pendente</td>'; 
+                                        }elseif($v == 'V'){
+                                            echo '<td>Confirmado </td>'; 
+                                        }
+                                    }
+                                    if($k == "status_entrega"){
+                                        if($v != 'E'){
+                                            if($v == 'F'){
+                                                echo '<td>Fabricando</td>'; 
+                                            }elseif($v == 'A'){
+                                                echo '<td>A caminho</td>'; 
+                                            }elseif($v == 'S'){
+                                                echo '<td>Saindo para entrega</td>'; 
+                                            }elseif($v == 'X'){
+                                                echo '<td>Esperando pagamento</td>';
+                                            }    
+                                            echo '<td>Aguandando entrega</td>';
+                                        }elseif($v == 'E'){
+                                            echo '<td>Entregue</td>';
+                                            echo '<td><button type="submit" name = "confirmaCliente" value = "'.$idPedido.'" class="btn btn-primary" >Chegou</button></td>';
+                                        }
+                                    }
                                 }
-                                if($k == "status_pagamento"){
-                                    echo '<td>'.$v.'</td>';                  
-                                }
-                                if($k == "status_entrega"){
-                                    echo '<td>'.$v.'</td>';                  
-                                }
-                                if($k == "preco"){
-                                    echo '<td>'.$v.'</td>';                  
-                                }
-                            
+                                echo '<td><a href="#">Emitir Nota Fiscal</a></td>';
+                                echo "</tr>";
                             }
-                            echo "</tr>";
                         }
-                    }
-                ?> 
-        </table>
+                    ?> 
+            </table>
+        </form>
         <div class="centro" style="width: 30%; display: table;">
             <div class="centro" style="display: table-row; height: 1px;">
                 <div style="width: 2%; display: table-cell;">

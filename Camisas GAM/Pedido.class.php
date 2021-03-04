@@ -39,7 +39,15 @@ class Pedido{
 
     }
 
+    public function confirmacaoPedidoCliente($confirmacao, $idPedido){ 
+        global $pdo;
+
+        $sql = "UPDATE Pedido SET confirmacaoCliente = '$confirmacao' WHERE id = '$idPedido'";
+        $sql = $pdo->prepare($sql);
+        $sql->execute();
+    }
+
 
 }
-//select maker from Product INNER JOIN Printer ON Product.model = printer.model;
+
 ?>
