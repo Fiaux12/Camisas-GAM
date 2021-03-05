@@ -15,12 +15,13 @@
         if($u->cadastro($nome, $email, $tipoUsuario, $senha) == true){
                 header("Location: index.php"); 
         }else{
-
-            header("Location: cadastrar.html");
+            $cadastro = 'invalido';
+            $_SESSION['cadastro']=$cadastro;
+            header("Location: cadastro.php");
         }
 
     }else{
-        header("Location: cadastrar.html");
+        header("Location: cadastro.php");
     }
 
 ?>
