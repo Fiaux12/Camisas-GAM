@@ -16,11 +16,13 @@
                 
             }
         }else{
-            header("Location: logar.html");
+            $login = 'invalido';
+            $_SESSION['login']=$login;
+            header("Location: logar.php");
         }
 
     }else{
-        header("Location: logar.html");
+        header("Location: logar.php");
     }
 
 ?>
