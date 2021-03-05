@@ -13,7 +13,7 @@
         $senha = $_POST['senha'];
 
         if($u->cadastro($nome, $email, $tipoUsuario, $senha) == true){
-                header("Location: index.php"); 
+            header("Location: index.php"); 
         }else{
             $valida = 'invalido';
             $_SESSION['cadastro'] = $valida;

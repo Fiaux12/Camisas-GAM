@@ -18,6 +18,7 @@ class Usuario{
             echo $dado['senha'];
             session_start();
             $_SESSION['idUsuario'] = $dado['id'];
+            $_SESSION['emailUsuario'] = $dado['email'];
             $_SESSION['nomeUsuario'] = $dado['nome'];
 
             return true;
@@ -47,6 +48,16 @@ class Usuario{
 
             return true;
         }        
+    }
+
+    public function mudarSenha($email, $senhaNova){
+
+        global $pdo;
+
+        $sql = "UPDATE Conta SET senha = '$senhaNova' WHERE email = '$email';";
+        $sql = $pdo->prepare($sql);
+        $sql->execute();
+
     }
 }
 
