@@ -22,8 +22,8 @@
 		<?php
 		if(!isset($_SESSION['idUsuario'])){
 		?>
-			<a href="./cadastrar.html"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
-			<a href="./logar.html"><button type="button" class="btn btn-primary">Login</button></a>
+			<a href="./cadastro.php"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
+			<a href="./logar.php"><button type="button" class="btn btn-primary">Login</button></a>
 			<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
 		<?php
 		}else{
