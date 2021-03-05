@@ -25,7 +25,20 @@ class Pedido{
 
     }
 
-    public function excluirPedido(){  }
+    public function buscaConfirmacao($idPedido){  
+
+        global $pdo;
+        $sql = "SELECT confirmacaoCliente FROM Pedido WHERE id = '$idPedido';";
+        $sql = $pdo->prepare($sql);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $dado = $sql->fetch();
+            return $dado;
+        }
+    
+        
+    }
 
     public function fazerNota(){  }
 

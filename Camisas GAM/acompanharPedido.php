@@ -89,8 +89,13 @@
                                             }    
                                             echo '<td>Aguandando entrega</td>';
                                         }elseif($v == 'E'){
-                                            echo '<td>Entregue</td>';
-                                            echo '<td><button type="submit" name = "confirmaCliente" value = "'.$idPedido.'" class="btn btn-primary" >Chegou</button></td>';
+                                            if($p->buscaConfirmacao($idPedido) == 'V'){
+                                                echo '<td>Entregue</td>';
+                                                echo '<td>Confirmado</td>';
+                                            }else{
+                                                echo '<td>Aguandando entrega</td>';
+                                                echo '<td><button type="submit" name = "confirmaCliente" value = "'.$idPedido.'" class="btn btn-primary" >Chegou</button></td>';
+                                            }
                                         }
                                     }
                                 }
