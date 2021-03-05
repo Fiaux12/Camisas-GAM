@@ -28,8 +28,8 @@
         <div style="text-align: center;">
           <h1 id="cad-log">Está quase pronto, só falta fazer o pagamento!</h1>
           <p id="cad-log">Para continuar faça o login ou cadastre-se.</p>
-          <a href="./cadastrar.html"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
-          <a href="./logar.html"><button type="button" class="btn btn-primary">Login</button></a>
+          <a href="./cadastro.php"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
+          <a href="./logar.php"><button type="button" class="btn btn-primary">Login</button></a>
         </div>
         
       <?php
