@@ -46,6 +46,13 @@
                             echo '<p id="car">Sexo: '.$dadosPedido[6].'</p>';
                             echo '<p  style="color: white;" id="cad">Quantidade:'.$dadosPedido[5].'</p> ';
                             echo '<p id="car">R$'.$dadosPedido[2].'</p>';
+                            ?>
+                            <form action="removerDoCarrinho.php" method="POST">
+                            <?php
+                                echo'<button  type = "submit" name = "remover" value = "'.$dadosPedido[0].'" class="centro">Remover</button>';
+                            ?>
+                            </form>
+                            <?php
                         echo '</div>';
                     echo '</fieldset>';
                     $total += $dadosPedido[2] * $dadosPedido[5];
