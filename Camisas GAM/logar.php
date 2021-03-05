@@ -1,3 +1,6 @@
+<?php
+	require 'conexao.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +20,13 @@
         <h1 id="cad-log">Faça seu login </h1>
         <p id="cad-log">Tenha certeza de que seus dados estão corretos</p>
       </div>
-	<form action="logar.php" method="POST" class="centro">
-
+	<form action="fazerLogin.php" method="POST" class="centro">
+		<?php
+			if ($_SESSION['login'] == 'invalido') {
+				echo '<p id="cad-log">Email ou senha incorreto!</p>';
+				unset($_SESSION['login']);
+			}
+		?>
 		<label id="cad-log">Email:</label> <input type="email" name="email" id="email"><br>
 		<label id="cad-log">Senha:</label> <input type="password" name="senha" id="senha"><br>
 		<input type="submit" id="cadastrar">
