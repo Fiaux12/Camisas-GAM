@@ -2,6 +2,7 @@
   require 'conexao.php';
   require_once 'Camisa.class.php';
   $p = new Camisa();
+  $idCamisa = 0;
 ?>
 
 <!DOCTYPE html>
@@ -109,9 +110,7 @@
                     $idCamisa = $v;
                   }
                   if($k == "preco"){
-
                     echo '<button type = "submit" name = "idCamisa" value="'.$idCamisa.'"><i class="fa fa-shopping-cart"></i>  Comprar<br>R$'.$v.'</button>';
-										
                   }
                 }
               }
@@ -119,8 +118,12 @@
           ?>
       </div>
     </div>
-       	</fieldset>
+    </fieldset>
   </form>
+  <form action="./criarPreferencias.php" method="POST">
+      <?php echo'<button type = "submit" name = "addPreferencia" value="'.$idCamisa.'"><i class="fa fa-heart"></i></button>';?>
+  </form>
+  
   <div class="centro" style="width: 30%; display: table;">
     <div class="centro" style="display: table-row; height: 1px;">
       <div style="width: 2%; display: table-cell;">

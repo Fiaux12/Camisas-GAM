@@ -22,6 +22,15 @@ class Pedido{
         $sql = $pdo->prepare($sql);
         $sql->execute();
         
+    }
+
+    public function criaPreferencia($idCamisa, $idConta){  
+
+        global $pdo;
+
+        $sql = "INSERT into Preferencia(id_conta, id_camisa) values ('$idConta', '$idCamisa')";
+        $sql = $pdo->prepare($sql);
+        $sql->execute();
 
     }
 
@@ -36,7 +45,6 @@ class Pedido{
             $dado = $sql->fetch();
             return $dado;
         }
-    
         
     }
 
@@ -45,10 +53,10 @@ class Pedido{
     public function buscarPedido($idConta){  
 
         global $pdo;
-			$resultado = array();
-			$cmd = $pdo->query("SELECT Pedido.id, status_pagamento, status_entrega, preco  FROM Pedido INNER JOIN Conta ON Pedido.id_conta = Conta.id WHERE Conta.id = '$idConta';");
-			$resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
-			return $resultado;
+        $resultado = array();
+        $cmd = $pdo->query("SELECT Pedido.id, status_pagamento, status_entrega, preco  FROM Pedido INNER JOIN Conta ON Pedido.id_conta = Conta.id WHERE Conta.id = '$idConta';");
+        $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
 
     }
 
@@ -59,7 +67,6 @@ class Pedido{
         $sql = $pdo->prepare($sql);
         $sql->execute();
     }
-
 
 }
 

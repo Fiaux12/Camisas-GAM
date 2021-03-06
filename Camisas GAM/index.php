@@ -28,6 +28,7 @@
 		<?php
 		}else{
 		?>
+			<a href="preferencias.php"><button type="button" class="btn btn-primary">Preferências</button></a>
 			<a href="mudarSenha.php"><button type="button" class="btn btn-primary">Mudar Senha</button></a>
 			<a href="acompanharPedido.php"><button type="button" class="btn btn-primary">Pedidos</button></a>
 			<a href="sair.php"><button type="button" class="btn btn-primary">Sair</button></a>
@@ -70,7 +71,9 @@
 					<!-- Banner -->
 						<section id="banner">
 							<header>
-								<h2>Seja Bem Vindo!</h2>
+								<?php
+                                    echo '<h2>Seja Bem Vindo '.$_SESSION['nomeUsuario'].' !</h2>';
+                                ?>
 								<p>As melhores camisas, só aqui!</p>
 							</header>
 						</section>
