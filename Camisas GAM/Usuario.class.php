@@ -21,6 +21,14 @@ class Usuario{
             $_SESSION['emailUsuario'] = $dado['email'];
             $_SESSION['nomeUsuario'] = $dado['nome'];
 
+            $idConta = $dado['id'];
+            $dataH = date('d/m/y h:i:s');
+            echo $dataH;
+
+            $sql2 = "INSERT INTO Login(data, id_conta) values ('$dataH', '$idConta')";
+            $sql2 = $pdo->prepare($sql2);
+            $sql2->execute();
+
             return true;
         }else{
             return false;
