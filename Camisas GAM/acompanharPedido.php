@@ -1,10 +1,8 @@
 <?php
 	require 'conexao.php';
-	require_once 'Pedido.class.php';
+	require 'Pedido.class.php';
 	$p = new Pedido();
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -63,7 +61,16 @@
                                     
                                     if($k == "id"){
                                         echo '<td>#'.$v.'</td>';  
-                                        $idPedido = $v;                
+                                        $idPedido = $v;  
+                                        global $pdo;
+                                        $sql = "SELECT confirmacaoCliente FROM Pedido WHERE id = '$idPedido';";
+                                        $sql = $pdo->prepare($sql);
+                                        $sql->execute();
+
+                                        if($sql->rowCount() > 0){
+                                            $dado = $sql->fetch();
+                                            $valida = $dado['confirmacaoCliente'];
+                                        }              
                                     }
                                     if($k == "preco"){
                                         echo '<td>'.$v.'</td>';                  
@@ -93,8 +100,13 @@
                                                 echo '<td>Entregue</td>';
                                                 echo '<td>Confirmado</td>';
                                             }else{
-                                                echo '<td>Aguandando entrega</td>';
-                                                echo '<td><button type="submit" name = "confirmaCliente" value = "'.$idPedido.'" class="btn btn-primary" >Chegou</button></td>';
+                                                if($valida == 'V'){
+                                                    echo '<td>Confirmado</td>';
+                                                    echo '<td>Confirmado</td>';
+                                                }else{
+                                                    echo '<td>Aguandando Confirmação</td>';
+                                                    echo '<td><button  type="submit" name = "confirmaCliente" value = "'.$idPedido.'" class="btn btn-primary" >Chegou</button></td>';
+                                                }
                                             }
                                         }
                                     }
@@ -108,9 +120,9 @@
         </form>
         <div class="centro" style="width: 30%; display: table;">
             <div class="centro" style="display: table-row; height: 1px;">
-                <div style="width: 2%; display: table-cell;">
-                <i class="fa fa-truck"></i>
-                </div>
+                <div style="width: 1%; display: table-cell;">
+                    <i class="fa fa-truck"></i>
+                    </div>
                 <div style="display: table-cell;">
                     <h3 id="cad-log" class="centro">Não se preocupe, nossos produtos são feitos e entregues com muito cuidado</h3>
                 </div>
