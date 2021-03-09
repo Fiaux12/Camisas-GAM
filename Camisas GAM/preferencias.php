@@ -96,6 +96,9 @@
                                                         if(count($dados) > 0){
 															for($i=0; $i < count($dados); $i++){
 																foreach ($dados[$i] as $k => $v) {
+																	if ($k == "id") {
+																		$idCamisa = $v;
+																	}
 																	if($k == "img"){
 																		?><a href="#" class="image featured"><?php
 																			echo "<img src=".$v." height=260>";?>
@@ -113,10 +116,12 @@
 													?>
 													<footer>
 														<ul class="actions">
-														<form action="./mostraProduto.php" method="POST">
-																<input type="hidden" name="identificador" value="20" />
+															<form action="./mostraProduto.php" method="POST">
+																<?php
+																echo '<input type="hidden" name="identificador" value="'. $idCamisa .'" />';
+																?>
 																<button>Comprar</button>
-														    </form>
+															</form>
 														</ul>
 													</footer>
 												</section>
