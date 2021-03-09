@@ -19,7 +19,9 @@
 
 	</head>
 	<body>
-    <p>.</p>
+        <div>
+            <a href="index.php"><div><i class="fa fa-home">Home</i></div></a>
+        </div>
         <br>
         <h1 style="color: white; font-size:30px; text-align: center; " >Bem Vindo ao Carrinho de Compras!</h1>
         <br><br>

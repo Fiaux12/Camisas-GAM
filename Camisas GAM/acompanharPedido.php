@@ -35,6 +35,9 @@
 
     </head>
     <body>
+        <div>
+			<a href="index.php"><div><i class="fa fa-home">Home</i></div></a>
+		</div>
         <h1 id="cad-log" class="cent" style="text-align: center;">Meus pedidos</h1>
         <h3 id="cad-log" class="cent" style="text-align: center;">Acompanhe seus pedidos aqui!</h3>
         <p id="cad-log">* Se o pagamento não for efetuado dentro de 3 dias o pedido será cancelado.</p>

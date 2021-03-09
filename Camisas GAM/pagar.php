@@ -21,10 +21,12 @@
 
 	</head>
 	<body>
-
     <?php
       if(!isset($_SESSION['idUsuario'])){
       ?>
+        <div>
+          <a href="index.php"><div><i class="fa fa-home">Home</i></div></a>
+        </div>
         <div style="text-align: center;">
           <h1 id="cad-log">Está quase pronto, só falta fazer o pagamento!</h1>
           <p id="cad-log">Para continuar faça o login ou cadastre-se.</p>
@@ -34,9 +36,10 @@
         
       <?php
       }else{
-      ?>
-       
-
+      ?>        
+      <div>
+        <a href="index.php"><div><i class="fa fa-home">Home</i></div></a>
+      </div>
       <div class="centro">
         <div style="text-align: center;">
           <h1 id="cad-log">Está quase pronto, só falta fazer o pagamento</h1>

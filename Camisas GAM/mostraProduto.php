@@ -16,23 +16,28 @@
 
 	</head>
 <body>
-
-  <?php
-
-    $dados = $p->buscaDadosLinha($_POST['identificador']);
-    if(count($dados) > 0){
-      for($i=0; $i < count($dados); $i++){
-        foreach ($dados[$i] as $k => $v) {
-          if($k == "img"){
-            //echo $v;
-            echo '<img src="'.$v.'" alt="placeholder" align="left" width="360" height="580">';
+  <div>
+    <a href="index.php"><div><i class="fa fa-home">Home</i></div></a>
+  </div>
+  <section>
+    <h2 style="color: white; text-align: center;" id="cad-lo">Escolha as opções para seu pedido!</h2>
+  </section>
+  <div>
+    <?php
+      $dados = $p->buscaDadosLinha($_POST['identificador']);
+      if(count($dados) > 0){
+        for($i=0; $i < count($dados); $i++){
+          foreach ($dados[$i] as $k => $v) {
+            if($k == "img"){
+              //echo $v;
+              echo '<img src="'.$v.'" alt="placeholder" align="left" width="360" height="580">';
+            }
           }
         }
       }
-    }
-  ?>
+    ?>
 
- <div style="color: white; text-align: center;">
+    <div style="color: white; text-align: center;">
       <div class="centro">
         <h1 id="cad-log">
           <?php
@@ -49,23 +54,23 @@
           ?>
         </h1>
       </div>
- </div>
+    </div>
 
- <h2 style="color: white;" id="cad-lo">Escolha as opções para seu pedido!</h2>
- 
-  <form action="addCarrinho.php" method="POST" class="centro">
-		<fieldset>
+
+
+    <form action="addCarrinho.php" method="POST" class="centro">
+    <fieldset>
           <p>
-             <label id="cad-log">Tamanho</label>
-             <select id = "myList" name="tamanho">
-               <option value = "PP">PP</option>
-               <option value = "P">P</option>
-               <option value = "M">M</option>
-               <option value = "G">G</option>
-               <option value = "GG">GG</option>
-               <option value = "XG">XG</option>
+            <label id="cad-log">Tamanho</label>
+            <select id = "myList" name="tamanho">
+              <option value = "PP">PP</option>
+              <option value = "P">P</option>
+              <option value = "M">M</option>
+              <option value = "G">G</option>
+              <option value = "GG">GG</option>
+              <option value = "XG">XG</option>
 
-             </select>
+            </select>
           </p>
     </fieldset>
     <fieldset>
@@ -95,7 +100,7 @@
       </p>
     </fieldset>
     <fieldset>
-    
+
     <div class="two-col">
       <div class="col1">
         <label id="cad-log">Quantidade</label> <input type="number" name="quantidade" value="1">
@@ -119,10 +124,12 @@
       </div>
     </div>
     </fieldset>
-  </form>
-  <form action="./criarPreferencias.php" method="POST">
+    </form>
+    <form action="./criarPreferencias.php" method="POST">
       <?php echo'<button type = "submit" name = "addPreferencia" value="'.$idCamisa.'"><i class="fa fa-heart"></i></button>';?>
-  </form>
+    </form>
+
+  </div>
   
   <div class="centro" style="width: 30%; display: table;">
     <div class="centro" style="display: table-row; height: 1px;">
