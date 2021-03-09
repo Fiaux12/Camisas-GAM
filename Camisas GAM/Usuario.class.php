@@ -22,7 +22,7 @@ class Usuario{
             $_SESSION['nomeUsuario'] = $dado['nome'];
 
             $idConta = $dado['id'];
-            $dataH = date('d/m/y h:i:s');
+            $dataH = date('y/m/d H:i:s');
 
             $sql2 = "INSERT INTO Login(data, id_conta) values ('$dataH', '$idConta')";
             $sql2 = $pdo->prepare($sql2);
