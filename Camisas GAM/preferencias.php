@@ -82,14 +82,15 @@
 										<header class="major">
 											<h2>Minhas Preferências</h2>
 										</header>
-										<div class="row">
-
+										
                                         <?php
-                                            $cont = $p->contaPreferencias($_SESSION['idUsuario']);
-                                            for($i = 0; $i <= $cont; $i++){
-                                        ?>
-                                            <div class="col-3 col-6-medium col-12-small">
-												<section class="box">
+                                        if ($p->contaPreferencias($_SESSION['idUsuario']) > 0) {
+											for($i = 0; $i <= $cont; $i++){
+                                        ?>		
+										<div class="row">
+											<div class="col-3 col-6-medium col-12-small">
+
+												<section style="clear: both;" class="box">
 													<?php
 														$dados = $p->buscaPreferencias($_SESSION['idUsuario']);
                                                         if(count($dados) > 0){
@@ -120,14 +121,19 @@
 													</footer>
 												</section>
 											</div>
+										</div>
                                         <?php
                                             }
+										}else {
+											echo '<h2 style="color:black;">Você ainda não possui preferências!</h2>';
+										}
                                         ?>
-										</div>
 									</section>
-
 							</div>
-
+						</div>
+					</div>
+				</section>
+						
 			<!-- Footer -->
 				<section id="footer">
 					<div class="container">

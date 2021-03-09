@@ -603,11 +603,14 @@
 											</div>
 										</div>
 									</section>
-
 							</div>
+						</div>
+					</div>
+				</section>
+
 
 			<!-- Footer -->
-				<section id="footer">
+			<section id="footer">
 					<div class="container">
 						<div class="row">
 							<div class="col-8 col-12-medium">
@@ -631,19 +634,16 @@
 								</section>
 							</div>
 							<div class="col-12">
-
 								<!-- Copyright -->
 									<div id="copyright">
 										<ul class="links">
 											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 										</ul>
 									</div>
-
 							</div>
 						</div>
 					</div>
-				</section>
-
+			</section>
 		</div>
 
 		<!-- Scripts -->
