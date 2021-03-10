@@ -5,7 +5,9 @@ class Pedido{
     public function criarPedido($formaPagamento, $rua, $numero, $bairro, $cidade , $referencia , $statusPagamento , $statusEntrega , $idConta , $precoTotal){ 
         global $pdo;
 
-        $sql = "INSERT into Pedido(id_conta, status_pagamento, status_entrega, preco, formaPagamento, rua, numero, bairro, cidade, referencia) values ('$idConta', '$statusPagamento', '$statusEntrega', '$precoTotal', '$formaPagamento', '$rua', '$numero', '$bairro', '$cidade', '$referencia')";
+        $dataH = date('y/m/d H:i:s');
+
+        $sql = "INSERT into Pedido(id_conta, status_pagamento, status_entrega, preco, formaPagamento, rua, numero, bairro, cidade, referencia, data) values ('$idConta', '$statusPagamento', '$statusEntrega', '$precoTotal', '$formaPagamento', '$rua', '$numero', '$bairro', '$cidade', '$referencia', '$dataH')";
         $sql = $pdo->prepare($sql);
         $sql->execute();
 
@@ -51,49 +53,10 @@ class Pedido{
     public function buscaPedidoCamisa($idPedido){  
 
         global $pdo;
-        
-        $sql = "SELECT id FROM PedidoCamisa WHERE id_pedido = '$idPedido';";
-        $sql = $pdo->prepare($sql);
-        $sql->execute();
-
-        $idPedidoCamisa = $sql->fetch();
-        $idPedidoCamisa;
-                
-        /*for ($i=0; $i < count($idPedidoCamisa); $i++) { 
-            
-            $sql = "SELECT * FROM PedidoCamisa WHERE id = '$idPedidoCamisa[$i]';";
-            $sql = $pdo->prepare($sql);
-            $sql->execute();
-
-            if($sql->rowCount() > 0){
-                $dados = $sql->fetch();
-                echo $dados['id_camisa'] . '<br>';
-                if(!isset($_SESSION['nota'])){
-                    $_SESSION['nota'] = array();
-                }
-    
-                for ($i=0; $i < count($dados); $i++) { 
-                    foreach($dados as $dado){
-                        $dadosPedido = array();
-                        echo $dado['sexo'];
-                        $dadosPedido[] = $dado['id'];          //0
-                        $dadosPedido[] = $dado['quantidade'];  //1
-                        $dadosPedido[] = $dado['id_pedido'];   //2
-                        $dadosPedido[] = $dado['id_camisa'];   //3
-                        $dadosPedido[] = $dado['cor'];         //4
-                        $dadosPedido[] = $dado['sexo'];        //5
-                        //$dadosPedido[] = $$dado['tamanho'];    //6
-                    }
-                $_SESSION['nota'][] = $dadosPedido;
-    
-                }
-            }
-        }*/
-
-        
-
-        
-
+        $resultado = array();
+        $cmd = $pdo->query("SELECT img, Camisa.nome id_camisa, id_pedido, quantidade, cor, sexo, tamanho, Camisa.preco FROM PedidoCamisa INNER JOIN Camisa ON PedidoCamisa.id_camisa = Camisa.id WHERE id_pedido = '$idPedido';");
+        $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
     }
 
     public function buscaNotaPedido($idPedido){  
@@ -124,6 +87,7 @@ class Pedido{
             $dadosPedido[] = $dado['cidade'];            //9
             $dadosPedido[] = $dado['referencia'];        //10
             $dadosPedido[] = $dado['confirmacaoCliente'];//11
+            $dadosPedido[] = $dado['data'];              //12
 
             $_SESSION['notaPedido'][] = $dadosPedido;
         }

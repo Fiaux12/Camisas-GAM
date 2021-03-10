@@ -76,7 +76,6 @@
           ?>
         </fieldset>
       </form>
-        <a href="https://streamlabs.com/glaucus120/tip">Emitir nota fiscal</a>
   </div>
   <?php
       }

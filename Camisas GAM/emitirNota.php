@@ -2,6 +2,7 @@
 	require 'conexao.php';
 	require 'Pedido.class.php';
 	$p = new Pedido();
+    $idPedido = 0;
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +23,21 @@
                 width: 100%;
             }
 
-            td, th {
+            td {
                 border: 1px solid #ffffff;
                 text-align: left;
                 padding: 8px;
+                text-align: center;
+                vertical-align: middle;
+                padding: 30px;
+            }
+            th {
+                border: 1px solid #ffffff;
+                text-align: left;
+                padding: 8px;
+                text-align: center;
+                vertical-align: middle;
+                
             }
 
             tr:nth-child(even) {
@@ -57,48 +69,76 @@
             </form>
         <?php
             }else{
+        ?>  
+            <div style="text-align: center;">
+                <a href="./emitirNota.php"><button type="button" class="btn btn-primary">Buscar novamente</button></a><br>
+            </div>     
+            <br>
+        <?php   
+
+            
+
+            foreach($_SESSION['notaPedido'] as $dadosPedido){
                 
-                foreach($_SESSION['nota'] as $dadosPedido){
-                    
-                    echo '<fieldset class="centro-borda">';
-                        echo '<div class="centro">';
-                            //echo '<img src="'. $dadosPedido[0] .'"  align="left" width="300" height="320">';
-                            echo '<b><p id="car">'.$dadosPedido[0].'</p></b>';
-                            echo '<p id="car">Tamanho: '.$dadosPedido[6].'</p>';
-                            echo '<p id="car">Cor: '.$dadosPedido[4].'</p>';
-                            echo '<p id="car">Sexo: '.$dadosPedido[5].'</p>';
-                            echo '<p  style="color: white;" id="cad">Quantidade:'.$dadosPedido[1].'</p> ';
-                            echo '<p id="car">R$ Nada ainda'.$dadosPedido[2].'</p>';
-                            ?>
-                            
-                            <?php
-                        echo '</div>';
-                    echo '</fieldset>';
-                   
-                }
-                foreach($_SESSION['notaPedido'] as $dadosPedido){
-                    
-                    echo '<fieldset class="centro-borda">';
-                        echo '<div class="centro">';
-                            echo'<h2 style="color: white;  text-align: center;">Dados da Entrega</h2><br>';
-                            echo '<p id="car">Pagamento: '.$dadosPedido[2].'</p>';
-                            echo '<p id="car">Entrega: '.$dadosPedido[3].'</p>';
-                            echo '<p id="car">Forma de Pagamento: '.$dadosPedido[5].'</p>';
-                            echo '<p id="car">Rua: '.$dadosPedido[6].'</p>';
-                            echo '<p id="car">Número: '.$dadosPedido[7].'</p>';
-                            echo '<p id="car">Bairro: '.$dadosPedido[8].'</p>';
-                            echo '<p id="car">Cidade: '.$dadosPedido[9].'</p>';
-                            echo '<p id="car">Referencia: '.$dadosPedido[10].'</p>';
-                            echo '<p id="car">Confirmação: '.$dadosPedido[11].'</p>';
-                            echo '<p id="car">Preço Total R$ '.$dadosPedido[4].'</p>';
-                            ?>
-                            
-                            <?php
-                        echo '</div>';
-                    echo '</fieldset>';
-                   
-                }
-        ?>
+                echo '<fieldset class="centro-borda">';
+                    echo '<div class="centro">';
+                        $idPedido = $dadosPedido[0];
+                        echo'<h2 style="color: white;  text-align: center;">Dados da Entrega</h2><br>';
+                        if($dadosPedido[2] == 'V') {echo '<p id="car">Pagamento: Confirmado</p>'; }
+                        else {echo '<p id="car">Pagamento: Pendente</p>';}
+                        if($dadosPedido[3] == 'E') {echo '<p id="car">Entrega: Confirmado</p>'; }
+                        else {echo '<p id="car">Entrega: Pendente</p>';}
+                        echo '<p id="car">Forma de Pagamento: '.$dadosPedido[5].'</p>';
+                        echo '<p id="car">Data do Pedido: '.$dadosPedido[12].'</p>';
+                        echo '<p id="car">Rua: '.$dadosPedido[6].'</p>';
+                        echo '<p id="car">Número: '.$dadosPedido[7].'</p>';
+                        echo '<p id="car">Bairro: '.$dadosPedido[8].'</p>';
+                        echo '<p id="car">Cidade: '.$dadosPedido[9].'</p>';
+                        echo '<p id="car">Referencia: '.$dadosPedido[10].'</p>';
+                        if($dadosPedido[11] == 'V') {echo '<p id="car">Confirmação: Confirmado</p>'; }
+                        else {echo '<p id="car">Confirmação: Pendente</p>';}
+                        echo '<p id="car">Preço Total R$ '.$dadosPedido[4].'</p>';
+                    echo '</div>';
+                echo '</fieldset>';
+
+            }
+            ?>
+            <br><h2 style="color: white;  text-align: center;">Dados do Pedido</h2><br>
+            <table>
+                <tr>
+                    <th>Camisa</th>
+                    <th>Nome</th>
+                    <th>Nº Pedido</th>
+                    <th>Quantidade</th>
+                    <th>Cor</th>
+                    <th>Sexo</th>
+                    <th>Tamanho</th>
+                    <th>Preço Unitário (R$)</th>
+                </tr>
+                
+                    <?php
+                        
+                        $dados = $p->buscaPedidoCamisa($idPedido);
+                        if(count($dados) > 0){
+                            for($i=0; $i < count($dados); $i++){
+                                echo "<tr>";
+                                foreach ($dados[$i] as $k => $v) {
+                                    if ($k == 'img') {
+                                        
+                                        echo '<td><img src="'.$v.'" height=auto; width = auto; style= "max-width:116.69px; max-height:127.661px;" ></td>';
+                                        
+                                    }else{
+                                        echo '<td>'.$v.'</td>';
+                                    }
+                                }
+                                echo "</tr>";
+                            }
+                        }else {
+                            echo "A tabela não possui dados!";
+                        }
+                    ?> 
+            </table>
+
             <div class="cent" style=" text-align: center;">
                 
                 <br>
