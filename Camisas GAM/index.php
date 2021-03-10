@@ -113,14 +113,7 @@
 															}
 														}
 													?>
-													<footer>
-														<ul class="actions">
-														<form action="./mostraProduto.php" method="POST">
-																<input type="hidden" name="identificador" value="20" />
-																<button>Comprar</button>
-														    </form>
-														</ul>
-													</footer>
+													
 												</section>
 											</div>
 											<div class="col-3 col-6-medium col-12-small">

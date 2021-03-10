@@ -78,7 +78,7 @@
 							<div class="col-12">
 
 								<!-- Portfolio -->
-									<section>
+									<section style="text-align: center;">
 										<header class="major">
 											<h2>Minhas Preferências</h2>
 										</header>
@@ -87,10 +87,10 @@
                                         if ($p->contaPreferencias($_SESSION['idUsuario']) > 0) {
 											for($i = 0; $i <= $cont; $i++){
                                         ?>		
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-small">
+										<div class="row" style="text-align: center;">
+											<div class="col-12" style="text-align: center;">
 
-												<section style="clear: both;" class="box">
+												<section style="clear: both;" class="box" >
 													<?php
 														$dados = $p->buscaPreferencias($_SESSION['idUsuario']);
                                                         if(count($dados) > 0){
@@ -100,15 +100,17 @@
 																		$idCamisa = $v;
 																	}
 																	if($k == "img"){
-																		?><a href="#" class="image featured"><?php
-																			echo "<img src=".$v." height=260>";?>
-																		</a><?php
+																		echo "<header><img src=".$v." height=260></header>";
 																	}
 																	if($k == "nome"){
 																		echo "<header><h3>".$v."</h3></header>";
 																	}
 																	if($k == "preco"){
-																		echo "<h3 style='color:green'>".$v."</h3>";
+																		echo'<form action="./mostraProduto.php" method="POST">';
+																			
+																			echo '<button type = "submit" name = "identificador" value="'.$idCamisa.'"> Comprar R$'.$v.'</button><BR>';
+																		
+																		echo '</form>';
 																	}
 																}
 															}
@@ -116,14 +118,10 @@
 													?>
 													<footer>
 														<ul class="actions">
-															<form action="./mostraProduto.php" method="POST">
-																<?php
-																echo '<input type="hidden" name="identificador" value="'. $idCamisa .'" />';
-																?>
-																<button>Comprar</button>
-															</form>
+															
 														</ul>
 													</footer>
+													
 												</section>
 											</div>
 										</div>
