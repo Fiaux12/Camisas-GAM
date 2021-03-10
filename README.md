@@ -1,4 +1,4 @@
-# Trabalho_Daw
+# Trabalho de Daw
 ## Camisas GAM
 Site para venda e entrega de camisas com varias funcionalidades.
 ### Grupo:
