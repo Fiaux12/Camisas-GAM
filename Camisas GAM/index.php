@@ -22,12 +22,14 @@
 		<?php
 		if(!isset($_SESSION['idUsuario'])){
 		?>
+			<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
 			<a href="./cadastro.php"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
 			<a href="./logar.php"><button type="button" class="btn btn-primary">Login</button></a>
 			<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
 		<?php
 		}else{
 		?>
+			<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
 			<a href="preferencias.php"><button type="button" class="btn btn-primary">Preferências</button></a>
 			<a href="mudarSenha.php"><button type="button" class="btn btn-primary">Mudar Senha</button></a>
 			<a href="acompanharPedido.php"><button type="button" class="btn btn-primary">Pedidos</button></a>
