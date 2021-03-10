@@ -114,7 +114,7 @@
                                         }
                                     }
                                 }
-                                echo '<td><a href="#">Emitir Nota Fiscal</a></td>';
+                                echo '<td><a href="emitirNota.php">Emitir Nota Fiscal</a></td>';
                                 echo "</tr>";
                             }
                         }
