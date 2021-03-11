@@ -12,8 +12,13 @@
 
         if($u->login($email, $senha) == true){
             if(isset($_SESSION['idUsuario'])){
-                header("Location: index.php");
-                
+            	if($_SESSION['tipoUsuario'] == 'cliente'){
+                	header("Location: index.php");
+                }elseif ($_SESSION['tipoUsuario'] == 'admTI') {
+                	header("Location: admTI.php");
+                }elseif ($_SESSION['tipoUsuario'] == 'adm') {
+                    header("Location: adm.php");
+                }
             }
         }else{
             $login = 'invalido';
