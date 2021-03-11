@@ -39,9 +39,8 @@
 				<?php
 			}else if($_SESSION['tipoUsuario'] == 'admTI' || $_SESSION['tipoUsuario'] == 'adm'){
 				?>
-					<a href="#" style="font-size: 16px;"><?php echo $_SESSION['nomeUsuario']; ?></a>
 					<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
-					<a href="sair.php" style="font-size: 16px;">Sair</a>
+					<a href="sair.php"><button type="button" class="btn btn-primary">Sair</button></a>
 				<?php
 			}
 		}

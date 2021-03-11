@@ -42,7 +42,7 @@
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">												
 											<ul class="actions">
-												<form action="./admProdutos.php" method="POST">
+												<form action="./admFuncoes.php" method="POST">
 													<input type="hidden" name="identificador" value="produtos"/>
 													<button style="background-color: rgba(34, 30, 31, 0.98); width: 300px; margin-left: 17px;">Gerenciar Produtos</button>
 											    </form>
@@ -50,7 +50,7 @@
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
 											<ul class="actions">
-												<form action="./admProdutos.php" method="POST">
+												<form action="./admFuncoes.php" method="POST">
 													<input type="hidden" name="identificador" value="pedidos"/>
 													<button style="background-color: rgba(34, 30, 31, 0.98); width: 300px; margin-left: 17px;">Gerenciar pedidos</button>
 											    </form>
