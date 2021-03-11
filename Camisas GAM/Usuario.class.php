@@ -20,6 +20,7 @@ class Usuario{
             $_SESSION['idUsuario'] = $dado['id'];
             $_SESSION['emailUsuario'] = $dado['email'];
             $_SESSION['nomeUsuario'] = $dado['nome'];
+            $_SESSION['tipoUsuario'] = $dado['tipo'];
 
             $idConta = $dado['id'];
             $dataH = date('y/m/d H:i:s');
