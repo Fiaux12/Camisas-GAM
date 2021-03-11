@@ -21,15 +21,6 @@ class Select{
         return $resultado;
     }
 
-    public function buscarDadosContasClientes(){
-        global $pdo;
-
-        $resultado = array();
-        $cmd = $pdo->query("SELECT Conta.id AS Num_Conta, Conta.nome , COUNT(id_conta) AS Pedidos_Pagos FROM Pedido INNER JOIN Conta ON Pedido.id_conta = Conta.id WHERE confirmacaoCliente = "V"  GROUP BY Conta.id  HAVING count(Pedidos_Pagos) > 1 ORDER BY Pedidos_Pagos DESC");
-        $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
-        return $resultado;
-    }
-
 	public function buscarDadosPedidos(){
 		global $pdo;
 
