@@ -30,9 +30,6 @@
 		}else{
 			if($_SESSION['tipoUsuario'] == 'cliente'){
 				?>
-					<a href="#" style="font-size: 16px;"><?php echo $_SESSION['nomeUsuario']; ?></a>
-					<a href="sair.php" style="font-size: 16px;">Sair</a>
-					<a href="./carrinho.html"><img src="imgs/carrinho.png" width=30 height=20></a>
 					<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
 					<a href="preferencias.php"><button type="button" class="btn btn-primary">Preferências</button></a>
 					<a href="mudarSenha.php"><button type="button" class="btn btn-primary">Mudar Senha</button></a>
