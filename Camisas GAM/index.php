@@ -2,7 +2,7 @@
 	require 'conexao.php';
 	require_once 'Camisa.class.php';
 	$p = new Camisa();
-
+	session_start();
 ?>
 
 <!DOCTYPE HTML>
@@ -28,14 +28,25 @@
 			<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
 		<?php
 		}else{
-		?>
-			<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
-			<a href="preferencias.php"><button type="button" class="btn btn-primary">Preferências</button></a>
-			<a href="mudarSenha.php"><button type="button" class="btn btn-primary">Mudar Senha</button></a>
-			<a href="acompanharPedido.php"><button type="button" class="btn btn-primary">Pedidos</button></a>
-			<a href="sair.php"><button type="button" class="btn btn-primary">Sair</button></a>
-			<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
-		<?php
+			if($_SESSION['tipoUsuario'] == 'cliente'){
+				?>
+					<a href="#" style="font-size: 16px;"><?php echo $_SESSION['nomeUsuario']; ?></a>
+					<a href="sair.php" style="font-size: 16px;">Sair</a>
+					<a href="./carrinho.html"><img src="imgs/carrinho.png" width=30 height=20></a>
+					<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
+					<a href="preferencias.php"><button type="button" class="btn btn-primary">Preferências</button></a>
+					<a href="mudarSenha.php"><button type="button" class="btn btn-primary">Mudar Senha</button></a>
+					<a href="acompanharPedido.php"><button type="button" class="btn btn-primary">Pedidos</button></a>
+					<a href="sair.php"><button type="button" class="btn btn-primary">Sair</button></a>
+					<a href="./carrinho.php"><img src="imgs/carrinho.png" width=30 height=20></a>
+				<?php
+			}else if($_SESSION['tipoUsuario'] == 'admTI' || $_SESSION['tipoUsuario'] == 'adm'){
+				?>
+					<a href="#" style="font-size: 16px;"><?php echo $_SESSION['nomeUsuario']; ?></a>
+					<a href="./Manuais/manual.html"><button type="button" class="btn btn-primary">Manual</button></a>
+					<a href="sair.php" style="font-size: 16px;">Sair</a>
+				<?php
+			}
 		}
 		?>
 	</div>
